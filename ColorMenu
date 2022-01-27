@@ -161,10 +161,9 @@ function changePatterns(pattern, backgroundPattern) {
   lagNotice.style.display = (animateSnakeGlobals.cacheMode ? 'none' : 'inline');
 
   //Turn off patterns if we don't want them
-  animateSnakeGlobals.isPatternDisabled = (pattern === "none"   let [, colourChangeFunc, snakeTongue, func2, func3] = code.match(/([$a-zA-Z0-9_]{0,6})\(this\.([$a-zA-Z0-9_]{0,6}),"#000000",([$a-zA-Z0-9_]{0,6})\(([$a-zA-Z0-9_]{0,6})\(/);
-);
-  animateSnakeGlobals.isBackgroundPatternDisabled = (backgroundPattern === "none"   let [, colourChangeFunc, snakeTongue, func2, func3] = code.match(/([$a-zA-Z0-9_]{0,6})\(this\.([$a-zA-Z0-9_]{0,6}),"#000000",([$a-zA-Z0-9_]{0,6})\(([$a-zA-Z0-9_]{0,6})\(/);
-);}
+  animateSnakeGlobals.isPatternDisabled = (pattern === "none");
+  animateSnakeGlobals.isBackgroundPatternDisabled = (backgroundPattern === "none");
+}
 
 function changeFrameRate(newFrameRate) {
   let frameRate = parseFloat(newFrameRate);
@@ -175,7 +174,7 @@ function changeFrameRate(newFrameRate) {
     return false;
   }
   if(frameRate > 60) {
-    if(confirm('This Frame Rate Might Be Buggy / Laggy!')) {
+    if(confirm('This FrameRate / FPS Might Be Buggy.')) {
       setFrameRate(frameRate);
     } else {
       return false;
@@ -250,10 +249,10 @@ function injectInitialHtmlAnimatedSnake() {
           </select>
         </div>
         <div style="margin:auto;padding:3px">
-        FrameRate / FPS <input id="frame-rate" type="text" size="3" value="40"><span> | Current Frames: <span id="current-frame-rate">40</span></span>
+        Frame Rate / FPS <input id="frame-rate" type="text" size="3" value="40"><span> | Current Value: <span id="current-frame-rate">40</span></span>
         </div>
         <div style="margin:auto;padding:3px">
-        <button id="update-pattern" style="text-align:center;">Update FrameRate / FPS</button>
+        <button id="update-pattern" style="text-align:center;">Update Frame Rate / FPS</button>
         </div>
         <div style="text-align:center;"><a id="animated-snake-close" href="#">Close</a> (J To Re-Show The GUI)</div>
       </div>
@@ -500,7 +499,7 @@ var strobeRainbow = (function() {
     /*calculate colours along snake*/
     let colourArray = [];
     for(let i = 0; i<50; i++) {
-      let colourTotal = [255,255,255]; /*base colour is white*/
+      let colourTotal = [0,0,0]; /*base colour is black*/
       let weight = 0.1;
       for(let splash of colorsSplashes) {
         if(Math.abs(splash.position - i) <= splash.spread) {
