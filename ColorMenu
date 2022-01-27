@@ -2,7 +2,7 @@
 let animateSnakeGlobals = {
   startPlayback: false,
   startingTime: 0,
-  framesPerSecond: 30,
+  framesPerSecond: 40,
   frameDoneSoFar: 0,
   currentColourArray: ["#FFFFFF","#000000"],
   cacheMode: false,
@@ -60,7 +60,7 @@ function processCode(code) {
     a.${headColour} = headColour;
     ${colourChangeFunc}(a.${blinkImg}, "#5282F2", headColour);/*Set blink image colours*/
     ${colourChangeFunc}(a.${eatImg}, "#5282F2", headColour);/*Set Eat image colours*/
-    ${colourChangeFunc}(a.${dieImg}, "#5282F2", headColour);/*Set Die image colours*/
+    ${colourChangeFunc}(a.${dieImg}, "#000000", headColour);/*Set Die image colours*/
     var hue = ${hueFunc}(headColour);
     var b = ${hueFunc}("#C73104");
     b[0] = (hue[0] + 180) % 360;
@@ -234,7 +234,7 @@ function injectInitialHtmlAnimatedSnake() {
             <option value="variation">variation</option>
             <option value="variationV2">variationV2</option>
           </select>
-          <span id="lag-notice" style="display:none;font-size:0.7em">(Will be laggy)</span>
+          <span id="lag-notice" style="display:none;font-size:0.7em">(Might Be Laggy)</span>
         </div>
         <div style="margin:auto;padding:3px">
           Background Pattern
@@ -254,7 +254,7 @@ function injectInitialHtmlAnimatedSnake() {
         <div style="margin:auto;padding:3px">
         <button id="update-pattern" style="text-align:center;">Update Frame rate</button>
         </div>
-        <div style="text-align:center;"><a id="animated-snake-close" href="#">Close</a> (Press j to show again)</div>
+        <div style="text-align:center;"><a id="animated-snake-close" href="#">Close</a> (J To Re-Show The GUI)</div>
       </div>
   </div>
 </div>
