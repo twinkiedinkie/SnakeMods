@@ -1,4 +1,3 @@
-
 /*initiate some globals*/
 let animateSnakeGlobals = {
   startPlayback: false,
@@ -61,7 +60,7 @@ function processCode(code) {
     a.${headColour} = headColour;
     ${colourChangeFunc}(a.${blinkImg}, "#5282F2", headColour);/*Set blink image colours*/
     ${colourChangeFunc}(a.${eatImg}, "#5282F2", headColour);/*Set Eat image colours*/
-    ${colourChangeFunc}(a.${dieImg}, "#000000", headColour);/*Set Die image colours*/
+    ${colourChangeFunc}(a.${dieImg}, "#5282F2", headColour);/*Set Die image colours*/
     var hue = ${hueFunc}(headColour);
     var b = ${hueFunc}("#C73104");
     b[0] = (hue[0] + 180) % 360;
@@ -175,7 +174,7 @@ function changeFrameRate(newFrameRate) {
     return false;
   }
   if(frameRate > 60) {
-    if(confirm('This Might Be Laggy.')) {
+    if(confirm('This frame rate may be buggy/laggy')) {
       setFrameRate(frameRate);
     } else {
       return false;
@@ -218,8 +217,8 @@ function injectInitialHtmlAnimatedSnake() {
   let initialHtml = 
   `<div id="animated-snake-popup" style="margin:0px;position:fixed;z-index:9011;width:100%;">
   <div style="width:300px;padding:10px;background-color:#373629;z-index:9012;border-color:black;border-style:solid;border-width:2px;;box-shadow: 0 3px 10px rgba(0,0,0,0.5);position:fixed;right:5px;top:5px">
-      <div class="font-effect-fire" style="text-align:center;padding:2px;background-color:transparent;font-family:sofia;font-size:25px">Animated Color Menu</div>
-      <div style="background-color:#555543;margin-top:5px;padding:0px;padding-bottom:10px;font-family:calibri;color:#fffeec;">
+      <div class="font-effect-fire" style="text-align:center;padding:2px;background-color:transparent;font-family:sofia;font-size:25px">Animated Colours Menu</div>
+      <div style="background-color:#555543;margin-top:5px;padding:0px;padding-bottom:10px;font-family:calibri;color:#ffffff;">
         <div style="margin:auto;padding:3px">
           <p style="margin-top:0">You will need to choose the rainbow snake for the mod to work. <span style="color:red;">Warning: flashing lights.</span></p>
           Snake Pattern
@@ -235,22 +234,22 @@ function injectInitialHtmlAnimatedSnake() {
             <option value="variation">variation</option>
             <option value="variationV2">variationV2</option>
           </select>
-          <span id="lag-notice" style="display:none;font-size:0.8em">Might Be Laggy</span>
+          <span id="lag-notice" style="display:none;font-size:0.7em">(Will be laggy)</span>
         </div>
         <div style="margin:auto;padding:3px">
           Background Pattern
           <br>
           <select id="background-pattern-chooser">
             <option value="none" selected="">none</option>
-            <option value="RandomHex">randomHexBg</option>
-            <option value="RandomHexSame">randomHexSameBg</option>
-            <option value="Temporal">temporalBg</option>
-            <option value="RollingRainbow">rollingRainbowBg</option>
-            <option value="RollingRaindowOld">rollingRainbowBgOld</option>
+            <option value="randomHexBg">randomHexBg</option>
+            <option value="randomHexSameBg">randomHexSameBg</option>
+            <option value="temporalBg">temporalBg</option>
+            <option value="rollingRainbowBg">rollingRainbowBg</option>
+            <option value="rollingRainbowBgOld">rollingRainbowBgOld</option>
           </select>
         </div>
         <div style="margin:auto;padding:3px">
-        Frame rate <input id="Frame-Rate" type="text" size="3" value="30"><span> | Current Value: <span id="current-frame-rate">30</span></span>
+        Frame rate <input id="frame-rate" type="text" size="3" value="30"><span> | Current Value: <span id="current-frame-rate">30</span></span>
         </div>
         <div style="margin:auto;padding:3px">
         <button id="update-pattern" style="text-align:center;">Update Frame rate</button>
@@ -344,7 +343,7 @@ function findFunctionInCode(code, functionSignature, somethingInsideFunction, lo
       break;
     }
     if(i == 0) {
-      throw new Error("Couldn't find function signature.");
+      throw new Error("Couldn't find function signature");
     }
   }
 
