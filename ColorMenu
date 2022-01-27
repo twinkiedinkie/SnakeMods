@@ -2,7 +2,7 @@
 let animateSnakeGlobals = {
   startPlayback: false,
   startingTime: 0,
-  framesPerSecond: 30,
+  framesPerSecond: 40,
   frameDoneSoFar: 0,
   currentColourArray: ["#FFFFFF","#000000"],
   cacheMode: false,
@@ -174,7 +174,7 @@ function changeFrameRate(newFrameRate) {
     return false;
   }
   if(frameRate > 60) {
-    if(confirm('This FrameRate / FPS Might Be Buggy.')) {
+    if(confirm('This Frame Rate Might Be Buggy / Laggy!')) {
       setFrameRate(frameRate);
     } else {
       return false;
@@ -249,10 +249,10 @@ function injectInitialHtmlAnimatedSnake() {
           </select>
         </div>
         <div style="margin:auto;padding:3px">
-        Frame Rate / FPS <input id="frame-rate" type="text" size="3" value="40"><span> | Current Value: <span id="current-frame-rate">40</span></span>
+        FrameRate / FPS <input id="frame-rate" type="text" size="3" value="40"><span> | Current Frames: <span id="current-frame-rate">40</span></span>
         </div>
         <div style="margin:auto;padding:3px">
-        <button id="update-pattern" style="text-align:center;">Update Frame Rate / FPS</button>
+        <button id="update-pattern" style="text-align:center;">Update FrameRate / FPS</button>
         </div>
         <div style="text-align:center;"><a id="animated-snake-close" href="#">Close</a> (J To Re-Show The GUI)</div>
       </div>
@@ -499,7 +499,7 @@ var strobeRainbow = (function() {
     /*calculate colours along snake*/
     let colourArray = [];
     for(let i = 0; i<50; i++) {
-      let colourTotal = [0,0,0]; /*base colour is black*/
+      let colourTotal = [255,255,255]; /*base colour is white*/
       let weight = 0.1;
       for(let splash of colorsSplashes) {
         if(Math.abs(splash.position - i) <= splash.spread) {
