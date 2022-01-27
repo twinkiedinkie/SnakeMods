@@ -2,7 +2,7 @@
 let animateSnakeGlobals = {
   startPlayback: false,
   startingTime: 0,
-  framesPerSecond: 40,
+  framesPerSecond: 30,
   frameDoneSoFar: 0,
   currentColourArray: ["#FFFFFF","#000000"],
   cacheMode: false,
@@ -220,7 +220,7 @@ function injectInitialHtmlAnimatedSnake() {
       <div class="font-effect-fire" style="text-align:center;padding:2px;background-color:transparent;font-family:sofia;font-size:25px">Animated Colors Menu</div>
       <div style="background-color:#555543;margin-top:5px;padding:0px;padding-bottom:10px;font-family:calibri;color:#FFFFFF;">
         <div style="margin:auto;padding:3px">
-          <p style="margin-top:0">You'll Need To Put On The Rainbow Color For This Mod To Work.<span style="color:red;">Flashing Lights.</span></p>
+          <p style="margin-top:0">You'll Need To Put On The Rainbow Snake Color For This Mod To Work.<span style="color:red;"> Warning There Is Flashing Lights!</span></p>
           Snake Pattern
           <br>
           <select id="snake-pattern-chooser">
