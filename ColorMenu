@@ -161,9 +161,10 @@ function changePatterns(pattern, backgroundPattern) {
   lagNotice.style.display = (animateSnakeGlobals.cacheMode ? 'none' : 'inline');
 
   //Turn off patterns if we don't want them
-  animateSnakeGlobals.isPatternDisabled = (pattern === "none");
-  animateSnakeGlobals.isBackgroundPatternDisabled = (backgroundPattern === "none");
-}
+  animateSnakeGlobals.isPatternDisabled = (pattern === "none"   let [, colourChangeFunc, snakeTongue, func2, func3] = code.match(/([$a-zA-Z0-9_]{0,6})\(this\.([$a-zA-Z0-9_]{0,6}),"#000000",([$a-zA-Z0-9_]{0,6})\(([$a-zA-Z0-9_]{0,6})\(/);
+);
+  animateSnakeGlobals.isBackgroundPatternDisabled = (backgroundPattern === "none"   let [, colourChangeFunc, snakeTongue, func2, func3] = code.match(/([$a-zA-Z0-9_]{0,6})\(this\.([$a-zA-Z0-9_]{0,6}),"#000000",([$a-zA-Z0-9_]{0,6})\(([$a-zA-Z0-9_]{0,6})\(/);
+);}
 
 function changeFrameRate(newFrameRate) {
   let frameRate = parseFloat(newFrameRate);
