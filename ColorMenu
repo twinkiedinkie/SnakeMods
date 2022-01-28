@@ -224,7 +224,7 @@ function injectInitialHtmlAnimatedSnake() {
           Snake Pattern
           <br>
           <select id="snake-pattern-chooser">
-            <option value="none">none</option>
+            <option value="Default">none</option>
             <option value="defaultPattern">defaultPattern</option>
             <option value="seizure">seizure</option>
             <option value="temporalRainbow">temporalRainbow</option>
