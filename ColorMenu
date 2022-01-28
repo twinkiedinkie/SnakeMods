@@ -7,9 +7,9 @@ let animateSnakeGlobals = {
   currentColourArray: ["#FFFFFF","#000000"],
   cacheMode: false,
   cache: [],
-  currentPatternString:"none",
+  currentPatternString:"Default",
   isPatternDisabled:false,
-  currentBackgroundPatternString:"none",
+  currentBackgroundPatternString:"Default",
   isBackgroundPatternDisabled:false,
 };
 
@@ -21,7 +21,7 @@ window.snake.animate = function(){
   setupEventListenersAnimatedSnake();
 
   /*Set up default pattern to use (If I change this then I also need to change "selected" in the html)*/
-  changePatterns("rollingRainbowRev","none");
+  changePatterns("rollingRainbowRev","Default");
 
   const scripts = document.body.getElementsByTagName('script');
     for(let script of scripts) {
@@ -151,18 +151,18 @@ function changePatterns(pattern, backgroundPattern) {
   animateSnakeGlobals.currentBackgroundPatternString = backgroundPattern;
 
   /*Can we cache the images for snake's head?*/
-  animateSnakeGlobals.cacheMode = ["temporalRainbow", "rollingRainbow", "rollingRainbowRev", "none"].includes(pattern);
+  animateSnakeGlobals.cacheMode = ["temporalRainbow", "rollingRainbow", "rollingRainbowRev", "Default"].includes(pattern);
   if(pattern.startsWith('singleColourFunctionCreator')) {
     animateSnakeGlobals.cacheMode = true;
   }
 
   //Show laggy notice if we aren't caching
   let lagNotice = document.getElementById('lag-notice');
-  lagNotice.style.display = (animateSnakeGlobals.cacheMode ? 'none' : 'inline');
+  lagNotice.style.display = (animateSnakeGlobals.cacheMode ? 'Default' : 'inline');
 
   //Turn off patterns if we don't want them
-  animateSnakeGlobals.isPatternDisabled = (pattern === "none");
-  animateSnakeGlobals.isBackgroundPatternDisabled = (backgroundPattern === "none");
+  animateSnakeGlobals.isPatternDisabled = (pattern === "Default");
+  animateSnakeGlobals.isBackgroundPatternDisabled = (backgroundPattern === "Default");
 }
 
 function changeFrameRate(newFrameRate) {
@@ -224,7 +224,7 @@ function injectInitialHtmlAnimatedSnake() {
           Snake Pattern
           <br>
           <select id="snake-pattern-chooser">
-            <option value="none">"none"</option>
+            <option value="Default">"Default"</option>
             <option value="defaultPattern">defaultPattern</option>
             <option value="seizure">seizure</option>
             <option value="temporalRainbow">temporalRainbow</option>
@@ -240,7 +240,7 @@ function injectInitialHtmlAnimatedSnake() {
           Background Pattern
           <br>
           <select id="background-pattern-chooser">
-            <option value="none" selected="">none</option>
+            <option value="Default" selected="">Default</option>
             <option value="randomHexBg">randomHexBg</option>
             <option value="randomHexSameBg">randomHexSameBg</option>
             <option value="temporalBg">temporalBg</option>
@@ -249,10 +249,10 @@ function injectInitialHtmlAnimatedSnake() {
           </select>
         </div>
         <div style="margin:auto;padding:3px">
-        Snake Animated Speed : <input id="frame-rate" type="text" size="3" value="40"><span> | Current Speed: <span id="current-frame-rate">40</span></span>
+        Animated Speed : <input id="frame-rate" type="text" size="3" value="40"><span> | Current Speed: <span id="current-frame-rate">40</span></span>
         </div>
         <div style="margin:auto;padding:3px">
-        <button id="update-pattern" style="text-align:center;">Update : Snake Animated Speed</button>
+        <button id="update-pattern" style="text-align:center;">Update : Animated Speed</button>
         </div>
         <div style="text-align:center;"><a id="animated-snake-close" href="#">Close</a> (J To Re-Show The GUI)</div>
       </div>
