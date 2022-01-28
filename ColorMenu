@@ -240,7 +240,7 @@ function injectInitialHtmlAnimatedSnake() {
           Background Pattern
           <br>
           <select id="background-pattern-chooser">
-            <option value="Default" selected="">Default</option>
+            <option value="Default" >Default</option>
             <option value="randomHexBg">randomHexBg</option>
             <option value="randomHexSameBg">randomHexSameBg</option>
             <option value="temporalBg">temporalBg</option>
