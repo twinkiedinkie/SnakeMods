@@ -4,7 +4,7 @@ let animateSnakeGlobals = {
   startingTime: 0,
   framesPerSecond: 40,
   frameDoneSoFar: 0,
-  currentColourArray: ["#FF0000","#0000FF"],
+  currentColourArray: ["#FFFFFF","#000000"],
   cacheMode: false,
   cache: [],
   currentPatternString:"none",
