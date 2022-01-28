@@ -218,13 +218,13 @@ function injectInitialHtmlAnimatedSnake() {
   `<div id="animated-snake-popup" style="margin:0px;position:fixed;z-index:9011;width:100%;">
   <div style="width:300px;padding:10px;background-color:#373629;z-index:9012;border-color:black;border-style:solid;border-width:2px;;box-shadow: 0 3px 10px rgba(0,0,0,0.5);position:fixed;right:5px;top:5px">
       <div class="font-effect-fire" style="text-align:center;padding:2px;background-color:transparent;font-family:sofia;font-size:25px">Animated Colors Menu</div>
-      <div style="background-color:#555543;margin-top:5px;padding:0px;padding-bottom:10px;font-family:calibri;color:#FFFFFF;">
+      <div style="background-color:#555543;margin-top:5px;padding:0px;padding-bottom:10px;font-family:calibri;color:#FF0000;">
         <div style="margin:auto;padding:3px">
           <p style="margin-top:0">You'll Need To Put On The Rainbow Snake Color For This Certain Mod To Work.<span style="color:red;"> Warning There Is Flashing Lights!</span></p>
           Snake Pattern
           <br>
           <select id="snake-pattern-chooser">
-            <option value="none">Default</option>
+            <option value="none">"none"</option>
             <option value="defaultPattern">defaultPattern</option>
             <option value="seizure">seizure</option>
             <option value="temporalRainbow">temporalRainbow</option>
@@ -234,7 +234,7 @@ function injectInitialHtmlAnimatedSnake() {
             <option value="variation">variation</option>
             <option value="variationV2">variationV2</option>
           </select>
-          <span id="lag-notice" style="display:none;font-size:0.7em">(Laggy)</span>
+          <span id="lag-notice" style="display:none;font-size:0.9em">(Might Be Very Laggy)</span>
         </div>
         <div style="margin:auto;padding:3px">
           Background Pattern
