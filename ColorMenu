@@ -7,9 +7,9 @@ let animateSnakeGlobals = {
   currentColourArray: ["#FFFFFF","#000000"],
   cacheMode: false,
   cache: [],
-  currentPatternString:"Default",
+  currentPatternString:"none",
   isPatternDisabled:false,
-  currentBackgroundPatternString:"Default",
+  currentBackgroundPatternString:"none",
   isBackgroundPatternDisabled:false,
 };
 
@@ -21,7 +21,7 @@ window.snake.animate = function(){
   setupEventListenersAnimatedSnake();
 
   /*Set up default pattern to use (If I change this then I also need to change "selected" in the html)*/
-  changePatterns("rollingRainbowRev","Default");
+  changePatterns("rollingRainbowRev","none");
 
   const scripts = document.body.getElementsByTagName('script');
     for(let script of scripts) {
@@ -151,18 +151,18 @@ function changePatterns(pattern, backgroundPattern) {
   animateSnakeGlobals.currentBackgroundPatternString = backgroundPattern;
 
   /*Can we cache the images for snake's head?*/
-  animateSnakeGlobals.cacheMode = ["temporalRainbow", "rollingRainbow", "rollingRainbowRev", "Default"].includes(pattern);
+  animateSnakeGlobals.cacheMode = ["temporalRainbow", "rollingRainbow", "rollingRainbowRev", "none"].includes(pattern);
   if(pattern.startsWith('singleColourFunctionCreator')) {
     animateSnakeGlobals.cacheMode = true;
   }
 
   //Show laggy notice if we aren't caching
   let lagNotice = document.getElementById('lag-notice');
-  lagNotice.style.display = (animateSnakeGlobals.cacheMode ? 'Default' : 'inline');
+  lagNotice.style.display = (animateSnakeGlobals.cacheMode ? 'none' : 'inline');
 
   //Turn off patterns if we don't want them
-  animateSnakeGlobals.isPatternDisabled = (pattern === "Default");
-  animateSnakeGlobals.isBackgroundPatternDisabled = (backgroundPattern === "Default");
+  animateSnakeGlobals.isPatternDisabled = (pattern === "none");
+  animateSnakeGlobals.isBackgroundPatternDisabled = (backgroundPattern === "none");
 }
 
 function changeFrameRate(newFrameRate) {
@@ -218,13 +218,13 @@ function injectInitialHtmlAnimatedSnake() {
   `<div id="animated-snake-popup" style="margin:0px;position:fixed;z-index:9011;width:100%;">
   <div style="width:300px;padding:10px;background-color:#373629;z-index:9012;border-color:black;border-style:solid;border-width:2px;;box-shadow: 0 3px 10px rgba(0,0,0,0.5);position:fixed;right:5px;top:5px">
       <div class="font-effect-fire" style="text-align:center;padding:2px;background-color:transparent;font-family:sofia;font-size:25px">Animated Colors Menu</div>
-      <div style="background-color:#555543;margin-top:5px;padding:0px;padding-bottom:10px;font-family:calibri;color:#FFFFFFF;">
+      <div style="background-color:#555543;margin-top:5px;padding:0px;padding-bottom:10px;font-family:calibri;color:#FFFFFF;">
         <div style="margin:auto;padding:3px">
           <p style="margin-top:0">You'll Need To Put On The Rainbow Snake Color For This Certain Mod To Work.<span style="color:red;"> Warning There Is Flashing Lights!</span></p>
           Snake Pattern
           <br>
           <select id="snake-pattern-chooser">
-            <option value="Default">"Default"</option>
+            <option value="none">none</option>
             <option value="defaultPattern">defaultPattern</option>
             <option value="seizure">seizure</option>
             <option value="temporalRainbow">temporalRainbow</option>
@@ -234,13 +234,13 @@ function injectInitialHtmlAnimatedSnake() {
             <option value="variation">variation</option>
             <option value="variationV2">variationV2</option>
           </select>
-          <span id="lag-notice" style="display:none;font-size:0.9em">(Might Be Very Laggy)</span>
+          <span id="lag-notice" style="display:none;font-size:0.7em">(Might Be Laggy)</span>
         </div>
         <div style="margin:auto;padding:3px">
           Background Pattern
           <br>
           <select id="background-pattern-chooser">
-            <option value="Default" >Default</option>
+            <option value="none" selected="">none</option>
             <option value="randomHexBg">randomHexBg</option>
             <option value="randomHexSameBg">randomHexSameBg</option>
             <option value="temporalBg">temporalBg</option>
@@ -249,10 +249,10 @@ function injectInitialHtmlAnimatedSnake() {
           </select>
         </div>
         <div style="margin:auto;padding:3px">
-        Animated Speed : <input id="frame-rate" type="text" size="3" value="40"><span> | Current Speed: <span id="current-frame-rate">40</span></span>
+        Snake Animated Speed<input id="frame-rate" type="text" size="3" value="40"><span> | Current Speed: <span id="current-frame-rate">40</span></span>
         </div>
         <div style="margin:auto;padding:3px">
-        <button id="update-pattern" style="text-align:center;">Update : Animated Speed</button>
+        <button id="update-pattern" style="text-align:center;">Update : Snake Animated Speed</button>
         </div>
         <div style="text-align:center;"><a id="animated-snake-close" href="#">Close</a> (J To Re-Show The GUI)</div>
       </div>
