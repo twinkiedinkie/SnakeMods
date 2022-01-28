@@ -1,4 +1,4 @@
-/*dark snake menu*/
+
 window.snake.scheme = function(settings = {}) {
   if(settings.scoreBar === undefined)
     settings.scoreBar = '#4A752C';
@@ -325,6 +325,7 @@ window.snake.darkMode = function() {
 			}
 	};
 	`);
+	window.snake.dark();
 }/*custom menu*/
 javascript: req = new XMLHttpRequest(); req.open('GET', 'https://raw.githubusercontent.com/DarkSnakeGang/GoogleSnakeCustomMenuStuff/main/custom.js'); req.onload = function() { eval(this.responseText + 'snake.more_menu();'); }; req.send();
 /*start of color menu*/
@@ -1113,5 +1114,4 @@ function hsvToRgb(h, s, v) {
 
   return [ r * 255, g * 255, b * 255 ];
 }
-window.snake.dark();
 window.snake.animate();
