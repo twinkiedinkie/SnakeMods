@@ -220,7 +220,7 @@ function injectInitialHtmlAnimatedSnake() {
       <div class="font-effect-fire" style="text-align:center;padding:2px;background-color:transparent;font-family:sofia;font-size:25px">Animated Colors Menu</div>
       <div style="background-color:#555543;margin-top:5px;padding:0px;padding-bottom:10px;font-family:calibri;color:#FFFFFF;">
         <div style="margin:auto;padding:3px">
-          <p style="margin-top:0">You'll Need To Put On The Rainbow Snake Color For This Mod To Work.<span style="color:red;"> Warning There Is Flashing Lights!</span></p>
+          <p style="margin-top:0">You'll Need To Put On The Rainbow Snake Color For This Certain Mod To Work.<span style="color:red;"> Warning There Is Flashing Lights!</span></p>
           Snake Pattern
           <br>
           <select id="snake-pattern-chooser">
@@ -249,10 +249,10 @@ function injectInitialHtmlAnimatedSnake() {
           </select>
         </div>
         <div style="margin:auto;padding:3px">
-        FrameRate / FPS <input id="frame-rate" type="text" size="3" value="40"><span> | Current Frames: <span id="current-frame-rate">40</span></span>
+        Snake Animated Speed<input id="frame-rate" type="text" size="3" value="40"><span> | Current Frames: <span id="current-frame-rate">40</span></span>
         </div>
         <div style="margin:auto;padding:3px">
-        <button id="update-pattern" style="text-align:center;">Update FrameRate / FPS</button>
+        <button id="update-pattern" style="text-align:center;">Update : Snake Animate Speed</button>
         </div>
         <div style="text-align:center;"><a id="animated-snake-close" href="#">Close</a> (J To Re-Show The GUI)</div>
       </div>
