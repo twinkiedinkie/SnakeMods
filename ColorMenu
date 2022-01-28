@@ -42,7 +42,6 @@ window.snake.scheme = function(settings = {}) {
     regexes.forEach(r => (/*console.log(darkModeCode.match(r)),*/darkModeCode.match(r) != null ? eval(darkModeCode.match(r)[0]) : 0));
   }
 };
-
 window.snake.dark = function() {
   return window.snake.scheme({
     scoreBar: '#000000',
@@ -1114,5 +1113,5 @@ function hsvToRgb(h, s, v) {
 
   return [ r * 255, g * 255, b * 255 ];
 }
-
+window.snake.dark();
 window.snake.animate();
