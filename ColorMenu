@@ -249,10 +249,10 @@ function injectInitialHtmlAnimatedSnake() {
           </select>
         </div>
         <div style="margin:auto;padding:3px">
-        Snake Animated Speed<input id="frame-rate" type="text" size="3" value="40"><span> | Current Frames: <span id="current-frame-rate">40</span></span>
+        Snake Animated Speed<input id="frame-rate" type="text" size="3" value="40"><span> | Current Speed: <span id="current-frame-rate">40</span></span>
         </div>
         <div style="margin:auto;padding:3px">
-        <button id="update-pattern" style="text-align:center;">Update : Snake Animate Speed</button>
+        <button id="update-pattern" style="text-align:center;">Update : Snake Animated Speed</button>
         </div>
         <div style="text-align:center;"><a id="animated-snake-close" href="#">Close</a> (J To Re-Show The GUI)</div>
       </div>
