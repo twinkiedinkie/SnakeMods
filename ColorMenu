@@ -151,7 +151,7 @@ function changePatterns(pattern, backgroundPattern) {
   animateSnakeGlobals.currentBackgroundPatternString = backgroundPattern;
 
   /*Can we cache the images for snake's head?*/
-  animateSnakeGlobals.cacheMode = ["temporalRainbow", "rollingRainbow", "rollingRainbowRev", "Default"].includes(pattern);
+  animateSnakeGlobals.cacheMode = ["SwitchRainbow", "rollingRainbow", "rollingRainbowRev", "Default"].includes(pattern);
   if(pattern.startsWith('singleColourFunctionCreator')) {
     animateSnakeGlobals.cacheMode = true;
   }
@@ -227,7 +227,7 @@ function injectInitialHtmlAnimatedSnake() {
             <option value="Default">Default</option>
             <option value="defaultPattern">defaultPattern</option>
             <option value="seizure">seizure</option>
-            <option value="temporalRainbow">temporalRainbow</option>
+            <option value="SwitchRainbow">SwitchRainbow</option>
             <option value="rollingRainbow">rollingRainbow</option>
             <option value="rollingRainbowRev" selected="">rollingRainbowRev</option>
             <option value="strobeRainbow">strobeRainbow</option>
@@ -243,7 +243,7 @@ function injectInitialHtmlAnimatedSnake() {
             <option value="Default" selected="">Default</option>
             <option value="randomHexBg">randomHexBg</option>
             <option value="randomHexSameBg">randomHexSameBg</option>
-            <option value="temporalBg">temporalBg</option>
+            <option value="SwitchRainbow">SwitchRainbow</option>
             <option value="rollingRainbowBg">rollingRainbowBg</option>
             <option value="rollingRainbowBgOld">rollingRainbowBgOld</option>
           </select>
@@ -448,7 +448,7 @@ function seizure(frameNum) {
   return colourArray;
 } 
 
-function temporalRainbow(frameNum) {
+function SpeedRainbow(frameNum) {
   let colourArray = [];
   let hue = (frameNum % 60)/60;
   let randColour = hsvToRgb(hue,1,1);
@@ -679,7 +679,7 @@ var randomHexSameBg = (function() {
   };
 })();
 
-function temporalBg(a, frameNum, x, y) {
+function SpeedRainbow(a, frameNum, x, y) {
   let hue = (frameNum % 60)/60;
   let randColour = hsvToRgb(hue,1,1);
   randColour = [Math.floor(randColour[0]),Math.floor(randColour[1]),Math.floor(randColour[2])];
