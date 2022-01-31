@@ -679,7 +679,7 @@ var randomHexSameBg = (function() {
   };
 })();
 
-function SpeedRainbow(a, frameNum, x, y) {
+function SpeedRainboww(a, frameNum, x, y) {
   let hue = (frameNum % 60)/60;
   let randColour = hsvToRgb(hue,1,1);
   randColour = [Math.floor(randColour[0]),Math.floor(randColour[1]),Math.floor(randColour[2])];
