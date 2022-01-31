@@ -243,7 +243,7 @@ function injectInitialHtmlAnimatedSnake() {
             <option value="Default" selected="">Default</option>
             <option value="randomHexBg">randomHexBg</option>
             <option value="randomHexSameBg">randomHexSameBg</option>
-            <option value="SwitchRainbow">SwitchRainbow</option>
+            <option value="SwitchRainbowBG">SwitchRainbowBG</option>
             <option value="rollingRainbowBg">rollingRainbowBg</option>
             <option value="rollingRainbowBgOld">rollingRainbowBgOld</option>
           </select>
